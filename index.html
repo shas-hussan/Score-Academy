@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/lightbox.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <!--
 
 -->
@@ -41,15 +44,14 @@
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
                           <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                          
                           <li class="scroll-to-section"><a href="#apply">Apply Now</a></li>
-                          <li class="has-sub">
-                              <!-- <a href="javascript:void(0)">Pages</a>
+                          <!-- <li class="has-sub">
+                              <a href="javascript:void(0)">Pages</a>
                               <ul class="sub-menu">
                                   <li><a href="meetings.html">Upcoming Meetings</a></li>
                                   <li><a href="meeting-details.html">Meeting Details</a></li>
-                              </ul> -->
-                          </li>
+                              </ul>
+                          </li> -->
                           <li class="scroll-to-section"><a href="#courses">Courses</a></li> 
                           <li class="scroll-to-section"><a href="#contact">Contact Us</a></li> 
                       </ul>        
@@ -74,7 +76,7 @@
               <div class="col-lg-12">
                 <div class="caption">
               <h6>Hello Students</h6>
-              <h2>Welcome to Score Academy,<br>Personalised online individual tution
+              <h2>Welcome to Score Academy<br>Personalised online individual tution
               </h2>
               <p>Score Academy is an online tutoring academy that connects individual students with experienced teachers for personalized instruction. The academy offers one-on-one tutoring sessions that can be tailored to the student's specific needs and learning style. The academy's goal is to provide students with the support and guidance they need to excel academically.</p>
               <div class="main-button-red">
@@ -100,7 +102,7 @@
               </div>
               <div class="down-content">
                 <h4>Best Education</h4>
-                <p>Score Academy prides itself on providing high-quality education to its students. The one-on-one tutoring sessions allow students to receive individualized attention and receive help with specific areas they are struggling with.</p>
+                <p>Score Academy prides itself on providing high-quality education to its students. The one-on-one tutoring sessions allow students to receive individualized attention which is more effective.</p>
               </div>
             </div>
             
@@ -110,7 +112,7 @@
               </div>
               <div class="down-content">
                 <h4>Best Teachers</h4>
-                <p>The academy's experienced teachers are dedicated to helping students succeed academically by providing personalized instruction that is tailored to the student's specific needs and learning style.</p>
+                <p>The academy's experienced teachers are dedicated to helping students succeed academically by providing personalized instruction. that is tailored to the student's specific needs and learning style.</p>
               </div>
             </div>
             
@@ -416,7 +418,7 @@
               <div class="row">
                 <div class="col-12">
                   <div class="count-area-content new-students">
-                    <div class="count-digit">100</div>
+                    <div class="count-digit">85</div>
                     <div class="count-title">New Students</div>
                   </div>
                 </div> 
@@ -445,7 +447,7 @@
         <div class="col-lg-9 align-self-center">
           <div class="row">
             <div class="col-lg-12">
-              <form id="contact" action="" method="post">
+              <form id="contact" action="">
                 <div class="row">
                   <div class="col-lg-12">
                     <h2>Admission Form</h2>
@@ -462,12 +464,12 @@
                   </div>
                   <div class="col-lg-4">
                     <fieldset>
-                      <input name="subject" type="text" id="subject" placeholder="Phone no" required="">
+                      <input name="phone" type="text" id="phone" placeholder="Phone no" required="">
                     </fieldset>
                   </div>
                   <div class="col-lg-4">
                     <fieldset>
-                      <input name="subject" type="text" id="subject" placeholder="Class" required="">
+                      <input name="class" type="text" id="text" placeholder="Class" required="">
                     </fieldset>
                   </div>
                   <div class="col-lg-4">
@@ -477,7 +479,7 @@
                   </div>
                   <div class="col-lg-4">
                     <fieldset>
-                      <input name="subject" type="text" id="subject" placeholder="WhatsApp no" required="">
+                      <input name="whatsapp" type="text" id="whatsapp" placeholder="WhatsApp no" required="">
                     </fieldset>
                   </div>
                   <div class="col-lg-12">
@@ -512,7 +514,7 @@
               </li>
               <li>
                 <h6>Website URL</h6>
-                <span>www.meeting.edu</span>
+                <span>www.scoreacademy.in</span>
               </li>
             </ul>
           </div>
@@ -537,7 +539,30 @@
     <script src="assets/js/video.js"></script>
     <script src="assets/js/slick-slider.js"></script>
     <script src="assets/js/custom.js"></script>
+
     <script>
+      $("#contact").submit((e)=>{
+          e.preventDefault()
+          $.ajax({
+              url:"https://script.google.com/macros/s/AKfycbzUnwqsdkZFpqG-6fwNUJLlN-_RAU_Hq2DtlrwCWzDX2Z0Scjg_jIWTX7lSYXCazTXj0g/exec",
+              method:"post",
+              data:$("#contact").serialize(),
+              
+              success:function(response){
+                  alert("Form submitted successfully")
+                  window.location.reload()
+                  //window.location.href="https://google.com"
+              },
+              error:function (err){
+                  alert("Something Error")
+  
+              }
+          })
+      })
+  </script>
+    <script>
+
+        
         //according to loftblog tut
         $('.nav li:first').addClass('active');
 
@@ -582,7 +607,9 @@
         $(window).scroll(function () {
           checkSection();
         });
-    </script>
+   
+      
+  </script>
 </body>
 
 </body>
